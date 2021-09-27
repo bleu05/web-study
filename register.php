@@ -18,7 +18,7 @@
 
       $num_result=mysqli_query($con, "SELECT * FROM member;") or die("Query Error1");
       $number=mysqli_num_rows($num_result);
-      $ins_query="INSERT INTO member VALUES(".$number.",'".$_POST['id']."','".$_POST['pw']."', '".$_POST['email']."', '".$_POST['NM']."', '".$_POST['sex']."')";
+      $ins_query="INSERT INTO member VALUES(".$number.",'".$_POST['id']."','".$_POST['pw']."', '".$_POST['email']."', '".$_POST['name']."', '".$_POST['sex']."')";
       mysqli_query($con, $ins_query) or die("Query error2");
 
       $sel_query="SELECT * FROM member WHERE id LIKE '{$_POST['id']}';";
@@ -29,7 +29,7 @@
       login ID : {$record['id']} <br>
       login PW : {$record['pw']} <br>
       your email is {$record['email']} <br>
-      your name is {$record['NM']} <br>
+      your name is {$record['name']} <br>
       your sex it {$record['sex']} <br> <br>";
 
       $_SESSION['id']=$_POST['id'];
