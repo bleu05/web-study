@@ -20,14 +20,15 @@
     $count=mysqli_num_rows($sel_result);
 
     if($count==0){
-
+      echo "<script>location.href='register.html';</script>";
     }
     else {
-      if(){
-
+      if($count['pw']==$_POST['pw']){
+        $_SESSION['id']=$_POST['id'];
+        header('Location:/index.php');
       }
       else{
-
+        echo "<script>location.href='login.php';</script>";
       }
     }
     ?>
